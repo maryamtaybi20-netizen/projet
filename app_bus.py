@@ -113,7 +113,7 @@ class BusManagementApp:
         ttk.Button(control_frame, text="Supprimer le bus sélectionné", command=self.delete_selected_bus, 
                   style="TButton").pack(side=LEFT, padx=5, pady=5)
 
-        # إطار Treeview مع شريط تمرير
+         
         tree_frame = Frame(self.bus_tab, bg="#ffffff")
         tree_frame.pack(fill="both", expand=True, padx=15, pady=(0,15))
 
@@ -125,7 +125,6 @@ class BusManagementApp:
                                     yscrollcommand=scroll_y.set, xscrollcommand=scroll_x.set,
                                     style="bus.Treeview")
         
-        # تحسين عرض الأعمدة
         col_widths = {"id_bus": 80, "bus_number": 120, "capacity": 100}
         for col in columns:
             self.bus_tree.heading(col, text=col.replace("_", " ").title())
