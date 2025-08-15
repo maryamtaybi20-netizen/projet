@@ -460,7 +460,7 @@ class BusManagementApp:
                     except Exception as e:
                         conn.rollback()
                         messagebox.showerror("Erreur", f"Erreur lors de la suppression: {e}")
-                else:  # Non - محاولة حذف الحافلة فقط
+                else:   
                     try:
                         cur.execute("DELETE FROM bus WHERE id_bus = %s", (bus_id,))
                         conn.commit()
@@ -705,7 +705,7 @@ class BusManagementApp:
                 btn_frame = tb.Frame(popup)
                 btn_frame.pack(pady=10)
                 
-                # زر لعرض الرحلات المرتبطة
+             
                 show_trips_btn = tb.Button(btn_frame, 
                     text="Afficher les trajets associés",
                     command=lambda: self.show_related_trips(line_id, popup),
@@ -1065,7 +1065,7 @@ class BusManagementApp:
         search_grid = tb.Frame(self.trip_search_frame)
         search_grid.pack(fill=X, padx=5, pady=5)
         
-        tb.Label(search_grid, text="Trajet:").pack(side=LEFT, padx=5)
+        tb.Label(search_grid, text="ID Trajet:").pack(side=LEFT, padx=5)
         self.trip_search_entry = tb.Entry(search_grid)
         self.trip_search_entry.pack(side=LEFT, padx=5, fill=X, expand=True)
         tb.Button(search_grid, text="Chercher", command=self.search_trip, bootstyle=(SECONDARY, OUTLINE)).pack(side=LEFT, padx=5)
